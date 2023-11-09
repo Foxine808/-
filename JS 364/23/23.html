@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="a" placeholder="a">
+    <input type="number" id="b" placeholder="b">
+    <input type="number" id="c" placeholder="c">
+    <button onclick="solveQuadraticEquation()">Найти корни</button>
+    <p id="result"></p>
+    <script>
+        function solveQuadraticEquation() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let c = document.getElementById('c').value;
+        let resultElement = document.getElementById('result');
+
+        let discriminant = b * b - 4 * a * c;
+
+        if (discriminant > 0) {
+            let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            resultElement.textContent = 'Корни уравнения: x1 = ' + x1 + ', x2 = ' + x2;
+        } else if (discriminant === 0) {
+            let x = -b / (2 * a);
+            resultElement.textContent = 'Уравнение имеет один корень: x = ' + x;
+        } else {
+            resultElement.textContent = 'Уравнение не имеет действительных корней';
+        }
+    }
+
+    </script>
+</body>
+</html>

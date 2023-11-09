@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="wordInput">
+    <button id="checkButton">Проверить</button>    
+    <script>
+    var wordInput = document.getElementById('wordInput');
+    var checkButton = document.getElementById('checkButton');
+    checkButton.addEventListener('click', function() {
+    var word = wordInput.value;
+    var reversedWord = word.split('').reverse().join('');
+    
+    if (word === reversedWord) {
+        alert('Слово читается с начала и с конца одинаково!');
+    } else {
+        alert('Слово не читается с начала и с конца одинаково!');
+    }
+    });
+    </script>
+</body>
+</html>

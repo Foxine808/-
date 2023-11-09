@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">Пример дива</div>
+    <script>
+    const divs = document.getElementsByTagName("div");
+    for (let i = 0; i < divs.length; i++) {
+    const div = divs[i];
+    
+    let text = div.innerText;
+
+    if (text.length > 10) {
+    text = text.substring(0, 10) + "...";
+    }
+
+    div.innerText = text;
+    }
+
+    </script>
+</body>
+</html>

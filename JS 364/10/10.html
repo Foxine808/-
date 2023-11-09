@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="myInput">
+    <script>
+    var input = document.getElementById('myInput');
+    input.addEventListener('blur', function() {
+    var number = input.value;
+    var numberString = number.toString();
+    
+    if (numberString.includes('3')) {
+        alert('Число содержит цифру 3!');
+    }
+    });
+
+    </script>
+</body>
+</html>

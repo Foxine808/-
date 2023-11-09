@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="inptnum">
+    <p id="sum"></p>
+    <script>
+    const inptnum = document.getElementById('inptnum');
+    const sum = document.getElementById('sum');
+
+    inptnum.addEventListener('blur', () => {
+    const number = inptnum.value;
+    const digits = number.toString().split('');
+    
+    let digitSum = 0;
+    for (let i = 0; i < digits.length; i++) {
+        digitSum += parseInt(digits[i], 10);
+    }
+    
+    sum.textContent = `Сумма цифр: ${digitSum}`;
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="dateInput" placeholder="Введите дату в формате ДД.ММ.ГГГГ" onblur="getDayOfWeek(this.value)">
+    <script>
+        function getDayOfWeek(dateString) {
+    var dateParts = dateString.split('.');
+    var day = parseInt(dateParts[0]);
+    var month = parseInt(dateParts[1]) - 1;
+    var year = parseInt(dateParts[2]);
+    
+    var date = new Date(year, month, day);
+    
+    var options = { weekday: 'long' };
+    var dayOfWeek = new Intl.DateTimeFormat('ru-RU', options).format(date);
+    
+    console.log(dayOfWeek);
+    }
+
+    </script>
+</body>
+</html>

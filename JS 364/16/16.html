@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="valueInput" min="0" value="0">
+    <button onclick="incrementValue()">+1</button>
+    <button onclick="decrementValue()">-1</button>
+    <script>
+    function incrementValue() {
+    var valueInput = document.getElementById('valueInput');
+    var value = parseInt(valueInput.value);
+    valueInput.value = value + 1;
+    }
+
+    function decrementValue() {
+    var valueInput = document.getElementById('valueInput');
+    var value = parseInt(valueInput.value);
+    if (value > 0) {
+        valueInput.value = value - 1;
+    }
+    }
+
+        </script>
+</body>
+</html>

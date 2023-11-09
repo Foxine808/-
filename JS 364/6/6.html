@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="fioInput">
+    <script>
+    const fioInput = document.getElementById('fioInput');
+    fioInput.addEventListener('blur', () => {
+    const fio = fioInput.value;
+    const capitalizedFio = capitalizeFio(fio);
+    fioInput.value = capitalizedFio;
+    });
+
+    function capitalizeFio(fio) {
+    const parts = fio.split(' ');
+    const capitalizedParts = parts.map(part => {
+        return part.charAt(0).toUpperCase() + part.substring(1);
+    });
+    return capitalizedParts.join(' ');
+    }
+
+    </script>
+</body>
+</html>

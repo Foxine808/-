@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameinput">
+    <input type="text" id="familinput">
+    <input type="text" id="firstNameInput">
+    <input type="text" id="middleNameInput">
+    <script>
+    const nameinput = document.getElementById('nameinput');
+    const familinput = document.getElementById('familinput');
+    const firstNameInput = document.getElementById('firstNameInput');
+    const middleNameInput = document.getElementById('middleNameInput');
+
+    nameinput.addEventListener('blur', () => {
+    const fullName = nameinput.value;
+    const parts = fullName.split(' ');
+
+    if (parts.length === 3) {
+        familinput.value = parts[0];
+        firstNameInput.value = parts[1];
+        middleNameInput.value = parts[2];
+    } else {
+        alert('Некорректный формат ФИО');
+    }
+    });
+
+    </script>
+</body>
+</html>

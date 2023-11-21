@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let elem = document.querySelector('#elem');
+
+    function handleClick() {
+    let input = document.createElement('input');
+    input.value = elem.textContent;
+    elem.textContent = '';
+    elem.appendChild(input);
+
+    input.addEventListener('blur', function() {
+    elem.textContent = this.value;
+    elem.addEventListener('click', handleClick);
+    elem.removeChild(input);
+    });
+
+    elem.removeEventListener('click', handleClick);
+    }
+
+    elem.addEventListener('click', handleClick);
+
+    </script>
+</body>
+</html>

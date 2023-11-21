@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    document.getElementById('button').addEventListener('click', function() {
+    let parent = document.getElementById('parent');
+    let li = document.createElement('li');
+    li.textContent = parent.children.length + 1; 
+    parent.appendChild(li);
+    });
+
+    document.getElementById('parent').addEventListener('click', function(event) {
+    let target = event.target;
+    if (target.tagName === 'LI') {
+    target.parentNode.removeChild(target);
+    }
+    });
+    </script>
+</body>
+</html>

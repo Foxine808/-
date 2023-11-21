@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>text1 <a href="#" onclick="strikeThroughAndRemove(this)">Strike</a></p> 
+    <p>text2 <a href="#" onclick="strikeThroughAndRemove(this)">Strike</a></p> 
+    <p>text3 <a href="#" onclick="strikeThroughAndRemove(this)">Strike</a></p> 
+    <script>
+    function strikeThroughAndRemove(element) {
+        element.parentNode.style.textDecoration = "line-through";
+        element.remove();
+    }
+    </script>
+</body>
+</html>

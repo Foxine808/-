@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let list = document.getElementById('myList');
+    let items = list.getElementsByTagName('li');
+
+    for (let item of items) {
+    let removeLink = document.createElement('a');
+    removeLink.appendChild(document.createTextNode(' удалить'));
+    removeLink.setAttribute('href', '#');
+    removeLink.addEventListener('click', function (event) {
+    item.remove();
+    });
+
+    item.appendChild(removeLink);
+    }
+
+    </script>
+</body>
+</html>
